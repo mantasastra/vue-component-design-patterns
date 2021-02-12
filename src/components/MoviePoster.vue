@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import placeholder from "@/assets/logo.png";
+import placeholder from "@/assets/img/logo.png";
 
 export default {
   name: "MoviePoster",
@@ -16,6 +16,15 @@ export default {
     image: {
       type: String,
       default: placeholder,
+      validator: (propValue) => {
+        const hasImageDirectory = propValue.indexOf("/img/") > -1;
+        const isPNG = propValue.endsWith(".png");
+        const isJPEG =
+          propValue.endsWith(".jpeg") || propValue.endsWith(".jpg");
+        const hasValidExtension = isPNG || isJPEG;
+
+        return hasImageDirectory && hasValidExtension;
+      },
     },
     title: {
       type: String,

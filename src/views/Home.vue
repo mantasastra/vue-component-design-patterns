@@ -1,17 +1,12 @@
 <template>
   <div class="home">
-    <MoviePoster
-      :image="logo"
-      title="Framework"
-      length="42:24"
-      watched="true"
-    />
+    <MoviePoster :image="logo" title="Framework" length="42:24" watched />
   </div>
 </template>
 
 <script>
 import MoviePoster from "@/components/MoviePoster";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/img/logo.png";
 
 export default {
   name: "Home",
